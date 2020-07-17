@@ -1,0 +1,21 @@
+{
+  "name": "photos_db",
+  "version": "1.0.0",
+  "description": "photos db json server",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch ./db.json --port 4001 --routes ./routes.json"
+  },
+  "keywords": [
+    "photos",
+    "db",
+    "hangarww"
+  ],
+  "author": "jgatjens",
+  "license": "ISC",
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.16.1",
+    "uid": "^1.0.0"
+  }
+}
