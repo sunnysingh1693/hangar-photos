@@ -1,6 +1,14 @@
-button{
-  width: 200px;
-  height: 20px;
-  margin: auto;
-  background-color: lightblue;
+#startWrapper {
+  height: 100vh;
+  background: url("/images/bgs/bg-start.jpg") no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: bottom;
+
+  img {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 15rem;
+  }
 }

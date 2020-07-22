@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
-import './Start.scss';
-import { Link } from '@reach/router'
+import React, { Component } from "react";
+import "./Start.scss";
+import { Link } from "@reach/router";
+import homeLogo from "../svg/hangar_logo_large.svg";
 
 class Start extends Component {
   render() {
     return (
-      <div>
-        <Link to="/components/Search">
-          <button>Go to Search!</button>
-        </Link>
+      <div id="startWrapper" className="overflow-auto">
+        <div className="contentWrapper overflow-auto">
+          <Link to="/components/Search">
+            <img src={homeLogo} alt="hangar_logo_large" />
+          </Link>
+        </div>
       </div>
     );
   }
