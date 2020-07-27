@@ -25,7 +25,7 @@ function DescriptionCard(props) {
             <img
               src={facebookLogo}
               alt="facebookLogo"
-              className="socialIcons"
+              className="socialIcons first"
             />
           </a>
           <a
@@ -33,11 +33,7 @@ function DescriptionCard(props) {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              src={linkedLogo}
-              alt="linkedLogo"
-              className="socialIcons second"
-            />
+            <img src={linkedLogo} alt="linkedLogo" className="socialIcons" />
           </a>
         </div>
       </div>

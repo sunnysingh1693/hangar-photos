@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="container-fluid p-0">
         <Router>
-          <Start path="/" />
-          <Search path="/components/Search" />
+          <Start path={process.env.PUBLIC_URL + '/'} />
+          <Search path="components/Search" />
         </Router>
       </div>
     );
