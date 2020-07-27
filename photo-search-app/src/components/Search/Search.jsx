@@ -89,6 +89,14 @@ class Search extends Component {
   };
 
   render() {
+    let searchWrapperBg = {
+      background: `url('${
+        process.env.PUBLIC_URL + "/"
+      }images/bgs/bg-start.jpg') no-repeat`,
+      backgroundSize: "auto",
+      backgroundPositionX: "right",
+      backgroundPositionY: "bottom",
+    };
     const {
       error,
       isLoaded,
@@ -111,9 +119,13 @@ class Search extends Component {
       );
     } else {
       return (
-        <div id="searchWrapper" className="row justify-content-center m-0">
+        <div
+          id="searchWrapper"
+          className="row justify-content-center m-0"
+          style={{ searchWrapperBg }}
+        >
           <div className="contentWrapper">
-            <Link to="/">
+            <Link to={process.env.PUBLIC_URL + "/"}>
               <div id="goBack">
                 <img src={goBack} alt="" />
               </div>

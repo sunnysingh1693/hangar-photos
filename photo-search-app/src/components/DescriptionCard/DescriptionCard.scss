@@ -42,8 +42,8 @@
     .socialIconsWrapper {
       line-height: 0;
       .socialIcons {
-        &.second {
-          margin-top: 1px;
+        &.first {
+          margin-bottom: 2px;
         }
         @include square(13px);
       }

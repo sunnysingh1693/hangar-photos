@@ -1,4 +1,6 @@
 $contentWrapperWidth: 340px;
+// @import homeLogo from "../../svg/hangar_logo_large.svg";
+
 .contentWrapper {
   width: $contentWrapperWidth;
   position: relative;
@@ -7,7 +9,8 @@ $contentWrapperWidth: 340px;
 #searchWrapper {
   font-family: "Aileron";
   padding: 0 0 0 10px;
-  background: url("/images/bgs/bg-home.jpg") no-repeat;
+  // hangar-photos/images/bgs/bg-start.jpg
+  background: url("../../bgs/bg-home.jpg") no-repeat;
   background-size: auto;
   background-position-x: right;
   background-position-y: bottom;
