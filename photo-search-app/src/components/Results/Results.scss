@@ -1,0 +1,56 @@
+#searchResults {
+  #searchResultText {
+    font-weight: bold;
+    padding-bottom: 15px;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .item {
+    padding: 0 10px 10px 0;
+    cursor: pointer;
+    position: unset;
+    //   &,
+    //   img {
+    //     @include square(150px);
+    //   }
+  }
+
+  .inActive {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .active {
+    z-index: 9;
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

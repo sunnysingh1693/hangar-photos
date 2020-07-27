@@ -4,6 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### How to start the json-server (\*if is require)
+
+You will need to start a fake `json-server`. go inside de `db` folder and run the fake server with this command:
+
+```
+  npm i && npm start
+```
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
