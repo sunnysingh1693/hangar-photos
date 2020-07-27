@@ -6,7 +6,7 @@ import Start from "./components/Start";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <Router>
           <Start path="/" />
           <Search path="/components/Search" />
