@@ -16,7 +16,7 @@ class Search extends Component {
       items: [],
       baseUrl: "http://localhost:4001/items",
       searchQuery: "",
-      isInActive: null,
+      // isInActive: null,
       itemDescription: "",
       searchFor: "",
     };
@@ -33,7 +33,7 @@ class Search extends Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.map((item) => ({ ...item, isDescription: false })),
+            items: result.map((item) => ({ ...item, isDescription: null })),
           });
         },
         (error) => {
@@ -65,16 +65,31 @@ class Search extends Component {
     this.getData(searchUrl);
   };
 
-  showDescription = (id) => {
-    this.setState({
-      isInActive: false,
-      // eslint-disable-next-line no-dupe-keys
-      isInActive: !this.state.isInActive,
-    });
+  prevId = "";
+  toggleDescription = (id, isClose) => {
+    // Resetting states on close
+    if (isClose || id === this.prevId) {
+      this.prevId = "";
+      this.setState({
+        // isInActive: null,
+        items: this.state.items.map((item) => ({
+          ...item,
+          isDescription: null,
+        })),
+      });
+      return false;
+    }
+    this.prevId = id;
+
+    // this.setState({
+    //   isInActive: false,
+    //   // eslint-disable-next-line no-dupe-keys
+    //   isInActive: !this.state.isInActive,
+    // });
 
     const items = this.state.items.map((item) => {
       if (item.id === id) {
-        return { ...item, isDescription: !this.state.isInActive };
+        return { ...item, isDescription: !item.isDescription };
       } else {
         return { ...item, isDescription: false };
       }
@@ -92,7 +107,7 @@ class Search extends Component {
       items,
       searchQuery,
       searchFor,
-      isInActive,
+      // isInActive,
     } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -128,8 +143,8 @@ class Search extends Component {
               <Results
                 searchFor={searchFor}
                 items={items}
-                isInActive={isInActive}
-                showDescription={this.showDescription}
+                // isInActive={isInActive}
+                toggleDescription={this.toggleDescription}
               />
             )}
             <Footer />

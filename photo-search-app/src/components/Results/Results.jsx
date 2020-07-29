@@ -3,12 +3,16 @@ import DescriptionCard from "../DescriptionCard/DescriptionCard";
 import "./Results.scss";
 
 class Results extends Component {
-  showDescriptionCallback = (id) => {
-    this.props.showDescription(id);
+  toggleDescriptionCallback = (id, isClose) => {
+    this.props.toggleDescription(id, isClose);
   };
 
   render() {
-    const { items, isInActive, searchFor } = this.props;
+    const {
+      items,
+      // isInActive,
+      searchFor,
+    } = this.props;
     const searchText = (
       <div>
         search result{items.length > 1 ? "s" : ""} for <em>{searchFor} ...</em>
@@ -22,12 +26,12 @@ class Results extends Component {
         <div className="row justify-content-between imgResultWrap">
           {items.map((item) => (
             <div
-              className={`item col-6 col-sm-4 
-                  ${isInActive === true ? "inActive" : ""}
-                  ${item.isDescription ? "active" : ""}`}
+              className={`item col-6 col-sm-4 ${
+                item.isDescription === false ? "inActive" : ""
+              } ${item.isDescription === true ? "active" : ""}`}
               key={item.id}
               data-itemkey={item.id}
-              onClick={() => this.showDescriptionCallback(item.id)}
+              onClick={() => this.toggleDescriptionCallback(item.id)}
             >
               <img
                 className="img-fluid"
@@ -38,7 +42,9 @@ class Results extends Component {
                 <div className="fadeIn">
                   <div style={{ position: "absolute", left: 0 }}>
                     <DescriptionCard
-                      onClick={() => this.showDescriptionCallback(item.id)}
+                      onClick={() =>
+                        this.toggleDescriptionCallback(item.id, true)
+                      }
                       itemDescription={item.description}
                     />
                   </div>

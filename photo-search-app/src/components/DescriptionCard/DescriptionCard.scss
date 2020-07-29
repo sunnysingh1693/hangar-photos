@@ -1,6 +1,6 @@
 .descriptionCard-wrapper {
   cursor: auto;
-  padding: 0 10px 38px 0;
+  padding: 0 10px 0 0;
   left: 0px;
   .descriptionCard {
     padding: 14px 10px 10px 15px;
@@ -39,11 +39,12 @@
       letter-spacing: 0.02em;
     }
 
-    .socialIconsWrapper {
+    .sIconsWrapper {
+      @include square(15px);
       line-height: 0;
-      .socialIcons {
+      .sIcons {
         &.first {
-          margin-bottom: 2px;
+          @include square(12px);
         }
         @include square(13px);
       }
@@ -62,6 +63,6 @@
 
 @media screen and (max-width: 576px) and (min-width: 476px) {
   .descriptionCard-wrapper {
-    padding: 10px 20px 0 0;
+    padding: 10px 10px 0 0;
   }
 }

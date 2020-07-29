@@ -7,16 +7,18 @@ function DescriptionCard(props) {
   return (
     <div className="descriptionCard-wrapper">
       <div className="descriptionCard row shadow-sm bg-white">
-        <div className="col-10 p-0">
-          <div className="heading">Image History</div>
-        </div>
-        <div className="col-2 d-flex justify-content-end p-0">
-          <div className="descriptionClose" onClick={props.toggleDescription}>
-            &times;
+        <div className="row m-0 w-100">
+          <div className="col-10 p-0">
+            <div className="heading">Image History</div>
+          </div>
+          <div className="col-2 d-flex justify-content-end p-0">
+            <div className="descriptionClose" onClick={props.toggleDescription}>
+              &times;
+            </div>
           </div>
         </div>
         <p>{props.itemDescription}</p>
-        <div className="w-100 d-flex justify-content-end socialIconsWrapper">
+        <div className="w-100 d-flex justify-content-end sIconsWrapper">
           <a
             href="https://www.facebook.com/hangarworldwide/"
             rel="noopener noreferrer"
@@ -25,7 +27,7 @@ function DescriptionCard(props) {
             <img
               src={facebookLogo}
               alt="facebookLogo"
-              className="socialIcons first"
+              className="sIcons first"
             />
           </a>
           <a
@@ -33,7 +35,7 @@ function DescriptionCard(props) {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img src={linkedLogo} alt="linkedLogo" className="socialIcons" />
+            <img src={linkedLogo} alt="linkedLogo" className="sIcons" />
           </a>
         </div>
       </div>
