@@ -16,7 +16,6 @@ class Search extends Component {
       items: [],
       baseUrl: "http://localhost:4001/items",
       searchQuery: "",
-      // isInActive: null,
       itemDescription: "",
       searchFor: "",
     };
@@ -60,7 +59,6 @@ class Search extends Component {
     let searchUrl = `${this.state.baseUrl}?q=${encodeURI(
       this.state.searchQuery
     )}`;
-    console.log(searchUrl);
 
     this.getData(searchUrl);
   };
@@ -71,7 +69,6 @@ class Search extends Component {
     if (isClose || id === this.prevId) {
       this.prevId = "";
       this.setState({
-        // isInActive: null,
         items: this.state.items.map((item) => ({
           ...item,
           isDescription: null,
@@ -80,12 +77,6 @@ class Search extends Component {
       return false;
     }
     this.prevId = id;
-
-    // this.setState({
-    //   isInActive: false,
-    //   // eslint-disable-next-line no-dupe-keys
-    //   isInActive: !this.state.isInActive,
-    // });
 
     const items = this.state.items.map((item) => {
       if (item.id === id) {
@@ -101,14 +92,7 @@ class Search extends Component {
   };
 
   render() {
-    const {
-      error,
-      isLoaded,
-      items,
-      searchQuery,
-      searchFor,
-      // isInActive,
-    } = this.state;
+    const { error, isLoaded, items, searchQuery, searchFor } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -143,7 +127,6 @@ class Search extends Component {
               <Results
                 searchFor={searchFor}
                 items={items}
-                // isInActive={isInActive}
                 toggleDescription={this.toggleDescription}
               />
             )}
