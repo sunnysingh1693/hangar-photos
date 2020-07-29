@@ -8,11 +8,7 @@ class Results extends Component {
   };
 
   render() {
-    const {
-      items,
-      // isInActive,
-      searchFor,
-    } = this.props;
+    const { items, searchFor } = this.props;
     const searchText = (
       <div>
         search result{items.length > 1 ? "s" : ""} for <em>{searchFor} ...</em>
@@ -23,14 +19,13 @@ class Results extends Component {
         <div id="searchResultText" className="text-uppercase">
           {searchFor === "" ? "all results" : searchText}
         </div>
-        <div className="row justify-content-between imgResultWrap">
+        <div className="row imgResultWrap">
           {items.map((item) => (
             <div
               className={`item col-6 col-sm-4 ${
                 item.isDescription === false ? "inActive" : ""
               } ${item.isDescription === true ? "active" : ""}`}
               key={item.id}
-              data-itemkey={item.id}
               onClick={() => this.toggleDescriptionCallback(item.id)}
             >
               <img
@@ -40,7 +35,7 @@ class Results extends Component {
               />
               {item.isDescription && (
                 <div className="fadeIn">
-                  <div style={{ position: "absolute", left: 0 }}>
+                  <div id="real-descriptionCard">
                     <DescriptionCard
                       onClick={() =>
                         this.toggleDescriptionCallback(item.id, true)
@@ -55,10 +50,6 @@ class Results extends Component {
               )}
             </div>
           ))}
-          <div
-            className="item col-6 col-sm-4"
-            style={{ cursor: "auto", pointerEvents: "none" }}
-          ></div>
         </div>
       </div>
     );

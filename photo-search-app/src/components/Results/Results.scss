@@ -12,10 +12,6 @@
     padding: 0 10px 10px 0;
     cursor: pointer;
     position: unset;
-    //   &,
-    //   img {
-    //     @include square(150px);
-    //   }
   }
 
   .inActive {
@@ -59,5 +55,10 @@
     100% {
       opacity: 1;
     }
+  }
+
+  #real-descriptionCard {
+    position: absolute;
+    left: 0;
   }
 }
