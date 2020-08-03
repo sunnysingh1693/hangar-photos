@@ -1,24 +1,34 @@
 import React from "react";
-import "./DescriptionCard.scss";
-import facebookLogo from "../../svg/icons8-facebook-f.svg";
-import linkedLogo from "../../svg/icons8-linkedin-2.svg";
+import facebookLogo from "../svg/icons8-facebook-f.svg";
+import linkedLogo from "../svg/icons8-linkedin-2.svg";
+import {
+  DescriptionCardWrapper,
+  DescriptionCardStyled,
+  Heading,
+  Ptag,
+  DescriptionClose,
+  SocailIconsWrapper,
+} from "../styles/DescriptionCard";
 
-function DescriptionCard(props) {
+const DescriptionCard = (props) => {
+  // console.log(`DescriptionCard ${props}`);
   return (
-    <div className="descriptionCard-wrapper">
-      <div className="descriptionCard row shadow-sm bg-white">
+    <DescriptionCardWrapper>
+      <DescriptionCardStyled className="row shadow-sm bg-white">
         <div className="row m-0 w-100">
           <div className="col-10 p-0">
-            <div className="heading">Image History</div>
+            <Heading>Image History</Heading>
           </div>
           <div className="col-2 d-flex justify-content-end p-0">
-            <div className="descriptionClose" onClick={props.toggleDescription}>
+            <DescriptionClose
+              onClick={() => props.toggleDescriptionCardProp(props.id, true)}
+            >
               &times;
-            </div>
+            </DescriptionClose>
           </div>
         </div>
-        <p>{props.itemDescription}</p>
-        <div className="w-100 d-flex justify-content-end sIconsWrapper">
+        <Ptag>{props.itemDescription}</Ptag>
+        <SocailIconsWrapper className="w-100 d-flex justify-content-end">
           <a
             href="https://www.facebook.com/hangarworldwide/"
             rel="noopener noreferrer"
@@ -37,10 +47,10 @@ function DescriptionCard(props) {
           >
             <img src={linkedLogo} alt="linkedLogo" className="sIcons" />
           </a>
-        </div>
-      </div>
-    </div>
+        </SocailIconsWrapper>
+      </DescriptionCardStyled>
+    </DescriptionCardWrapper>
   );
-}
+};
 
 export default DescriptionCard;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router'
-import Search from "./components/Search/Search";
-import Start from "./components/Start/Start";
+import Search from "./components/Search";
+import Start from "./components/Start";
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="container-fluid p-0">
         <Router>
           <Start path={process.env.PUBLIC_URL + '/'} />
-          <Search path="components/Search" />
+          <Search path="/components/Search" />
         </Router>
       </div>
     );
